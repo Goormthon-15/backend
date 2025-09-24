@@ -1,3 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: goormthon-2
+
 resources:
   - backend.yaml
   - ingress.yaml
@@ -5,4 +10,7 @@ resources:
 configMapGenerator:
   - name: backend-config
     files:
-      - config/backend-config.json
+      - config.json=config/backend-config.json
+
+generatorOptions:
+  disableNameSuffixHash: true
