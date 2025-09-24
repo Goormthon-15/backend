@@ -1,16 +1,18 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-
-namespace: goormthon-2
-
-resources:
-  - backend.yaml
-  - ingress.yaml
-
-configMapGenerator:
-  - name: backend-config
-    files:
-      - config.json=config/backend-config.json
-
-generatorOptions:
-  disableNameSuffixHash: true
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: backend-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: goormthon-2.goorm.training
+    http:
+      paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: backend-service
+            port:
+              number: 80
