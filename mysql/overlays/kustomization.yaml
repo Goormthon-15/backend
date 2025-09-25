@@ -18,7 +18,6 @@ patches:
       - op: replace
         path: /stringData
         value:
-          MYSQL_ROOT_PASSWORD: mypassword
           MYSQL_USER: myuser
           MYSQL_PASSWORD: mypassword
           MYSQL_DATABASE: mydb
