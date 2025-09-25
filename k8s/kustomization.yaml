@@ -8,9 +8,9 @@ resources:
   - ingress.yaml
 
 configMapGenerator:
-#  - name: backend-config
-#    files:
-#      - config.json=config/backend-config.json
+  - name: backend-config
+    files:
+      - application-prod.yaml=config/application-prod.yaml
 
   - name: backend-literals
     literals:
