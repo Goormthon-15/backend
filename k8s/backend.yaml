@@ -18,10 +18,10 @@ spec:
           image: 837126493345.dkr.ecr.ap-northeast-2.amazonaws.com/goormthon-2/backend:build-26
           ports:
             - containerPort: 8080
-#          volumeMounts:
-#            - name: config-volume
-#              mountPath: /app/resources
-#              readOnly: true
+         volumeMounts:
+           - name: config-volume
+             mountPath: /app/src/main/resources
+             readOnly: true
 #          command:
 #            - "sleep"
 #            - "3600"
@@ -31,10 +31,10 @@ spec:
                 configMapKeyRef:
                   name: backend-literals
                   key: SPRING_PROFILES_ACTIVE
-#      volumes:
-#        - name: config-volume
-#          configMap:
-#            name: backend-config
+     volumes:
+       - name: config-volume
+         configMap:
+           name: backend-config
 ---
 apiVersion: v1
 kind: Service
