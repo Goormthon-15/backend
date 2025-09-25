@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysqls
+  name: mysql
 spec:
   type: ClusterIP
   selector:
