@@ -10,7 +10,7 @@ resources:
 configMapGenerator:
   - name: backend-config
     files:
-      - application-prod.yaml=config/application-prod.yaml
+      - application-prod.yml=config/application-prod.yml
 
   - name: backend-literals
     literals:

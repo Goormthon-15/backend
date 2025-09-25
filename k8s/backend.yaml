@@ -21,7 +21,7 @@ spec:
           volumeMounts:
             - name: config-volume
               mountPath: /app/resources
-              subPath: application-prod.yaml
+              subPath: application-prod.yml
               readOnly: true
           env:
             - name: SPRING_PROFILES_ACTIVE
