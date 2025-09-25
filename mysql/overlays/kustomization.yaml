@@ -5,7 +5,6 @@ resources:
   - ../base
 
 namespace: goormthon-2
-# ArgoCD 사용 시 비워도 됩니다. 대신 ArgoCD 에서 namespace를 지정해 주세요.
 
 images:
   - name: mysql
@@ -19,6 +18,7 @@ patches:
       - op: replace
         path: /stringData
         value:
+          MYSQL_ROOT_PASSWORD: mypassword
           MYSQL_USER: myuser
-          MYSQL_PASSWORD: mypass123
+          MYSQL_PASSWORD: mypassword
           MYSQL_DATABASE: mydb

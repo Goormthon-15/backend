@@ -1,8 +1,4 @@
 {
   "GREETING": "Hello from Backend",
-  "PORT": 8080,
-  "MYSQL_HOST": "mysql",
-  "MYSQL_PASSWORD" : "0000",
-  "MYSQL_PORT" : 3306,
-  "MYSQL_USERNAME" : "root"
+  "PORT": 8080
 }

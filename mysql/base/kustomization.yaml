@@ -8,9 +8,3 @@ commonLabels:
 
 generatorOptions:
   disableNameSuffixHash: true
-
-configMapGenerator:
-  - name: sql-init-script
-    files:
-      # Used for one-time DB init via /docker-entrypoint-initdb.d
-      - init.sql=init.sql # format: <key>=<relative repo path>

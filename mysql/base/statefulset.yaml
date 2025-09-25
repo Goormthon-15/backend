@@ -2,9 +2,8 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: mysql
-  namespace: goormthon-2
 spec:
-  serviceName: mysql
+  serviceName: mysql-service
   replicas: 1
   selector:
     matchLabels:
@@ -40,12 +39,6 @@ spec:
           volumeMounts:
             - name: mysql-data
               mountPath: /var/lib/mysql
-            - name: init-script
-              mountPath: /docker-entrypoint-initdb.d
-      volumes:
-        - name: init-script
-          configMap:
-            name: sql-init-script
   volumeClaimTemplates:
     - metadata:
         name: mysql-data
