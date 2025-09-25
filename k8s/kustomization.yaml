@@ -11,6 +11,8 @@ configMapGenerator:
   - name: backend-config
     files:
       - config.json=config/backend-config.json
+    literals:
+      - SPRING_PROFILES_ACTIVE=prod
 
 generatorOptions:
   disableNameSuffixHash: true
