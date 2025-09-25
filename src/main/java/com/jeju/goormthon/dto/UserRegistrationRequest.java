@@ -56,8 +56,9 @@ public class UserRegistrationRequest {
 
 	// 언어 옵션 enum
 	public enum Language {
-		ENGLISH("English 🇺🇸"),
-		CHINESE("Chinese 🇨🇳");
+		ENGLISH("English us"),
+		CHINESE("Chinese cn"),
+		KOREA("korean kr");
 
 		private final String displayName;
 
@@ -74,6 +75,7 @@ public class UserRegistrationRequest {
 			switch (this) {
 				case ENGLISH: return "en";
 				case CHINESE: return "zh";
+				case KOREA: return "kr";
 				default: return "en";
 			}
 		}
