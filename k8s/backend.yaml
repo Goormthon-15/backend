@@ -12,7 +12,6 @@ spec:
       labels:
         app: backend
     spec:
-
       containers:
         - name: backend
           image: 837126493345.dkr.ecr.ap-northeast-2.amazonaws.com/goormthon-2/backend:build-26
@@ -22,9 +21,6 @@ spec:
            - name: config-volume
              mountPath: /app/src/main/resources
              readOnly: true
-#          command:
-#            - "sleep"
-#            - "3600"
           env:
             - name: SPRING_PROFILES_ACTIVE
               valueFrom:
