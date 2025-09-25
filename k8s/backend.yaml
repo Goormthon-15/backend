@@ -22,6 +22,8 @@ spec:
             - name: config-volume
               mountPath: /app/resources
               readOnly: true
+          command:
+            - "sleep infinity"
           env:
             - name: SPRING_PROFILES_ACTIVE
               valueFrom:
