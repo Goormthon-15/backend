@@ -12,6 +12,7 @@ spec:
       labels:
         app: backend
     spec:
+
       containers:
         - name: backend
           image: 837126493345.dkr.ecr.ap-northeast-2.amazonaws.com/goormthon-2/backend:build-24
@@ -21,10 +22,16 @@ spec:
             - name: config-volume
               mountPath: /app/config
               readOnly: true
-      volumes:
-        - name: config-volume
-          configMap:
-            name: backend-config
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-literals
+                  key: SPRING_PROFILES_ACTIVE
+#      volumes:
+#        - name: config-volume
+#          configMap:
+#            name: backend-
 ---
 apiVersion: v1
 kind: Service
