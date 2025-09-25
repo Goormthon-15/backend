@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Configuration;
 		title = "Goormthon API"
 	),
 	servers = {
-		@Server(url = "https://goormthon-2.goorm.training", description = "배포 서버"),
-		@Server(url = "http://localhost:8080", description = "Local 서버")
+		@Server(url = "https://goormthon-2.goorm.training/api", description = "배포 서버"),
+		@Server(url = "http://localhost:8080/api", description = "Local 서버")
 	}
 )
 public class SwaggerConfig {
