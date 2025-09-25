@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/translation")
+@RequestMapping("/translation")
 @RequiredArgsConstructor
 @Tag(name = "번역 API", description = "메시지 번역을 처리하는 API")
 public class TranslationController {
